@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Pokemon from "./Pokemon";
+import Details from "./Details";
+import DetailsContext from "./DetailsContext";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [home, setHome] = useState('https://pokeapi.co/api/v2/pokemon?limit=151')
+  const [pokeList, setPokeList] = useState([])
+  const [pokePic, setPokePic] = useState('')
+  const [details, setDetails] = useState({})
+  const value = {details,setDetails}
+
+  useEffect(() => {
+    fetch(home)
+      .then(res => res.json())
+      .then(data => {
+        setPokeList(data.results)
+      })
+  }, [home])
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <DetailsContext.Provider value={value}>
+      <div className = "title">Gen1 PokeList</div>
+      <div className = "pokeDisplay">{pokeList.map(pokemon => <Pokemon key={pokemon.name} data={pokemon}/>)}</div>
+    </DetailsContext.Provider>
     </>
   )
 }
+
+// {pokeList.map(pokemon => <Pokemon key={pokemon.name} pokePic={callPic(pokemon.url)}/>)}
 
 export default App
