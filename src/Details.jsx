@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import DetailsContext from "./DetailsContext"
 import Pokemon from "./Pokemon";
+import { Link } from "react-router-dom";
 
 export default function Details() {
     const {details} = useContext(DetailsContext)
@@ -38,9 +39,12 @@ export default function Details() {
 
     return (
     <>
+        <Link to='/'>
+            <button>Back</button>/
+        </Link>
         <img className="picmon" key={details.name} alt={details.name} src={pokeSprite}/>
-        <div className="name">Name: {details.name}</div>
-        {/* <div className="moves">{moves}</div> */}
+        <div className="name">Name: {details.name.charAt(0).toUpperCase(details.name)+ details.name.slice(1)}</div>
+        <div className="type">Type: {type.charAt(0).toUpperCase(type)+ type.slice(1)}</div>
         <div className="height">Height: {height}</div>
         <div className="weight">Weight: {weight}</div>
         <div className="HP">HP: {hp}</div>
@@ -49,7 +53,7 @@ export default function Details() {
         <div className="SpecialAttack">Special Attack: {special_attack}</div>
         <div className="SpecialDefense">Special Defence: {special_defence}</div>
         <div className="Speed">Speed: {speed}</div>
-        <div className="MoveDisplay">Moves: {moves.map(item => <div key={item.move.name}>{item.move.name}</div>)}</div>
+        <div className="MoveDisplay">Moves: {moves.map(item => <div key={item.move.name}>{item.move.name.charAt(0).toUpperCase(item.move.name)+ item.move.name.slice(1)}</div>)}</div>
     </>
     )
 }

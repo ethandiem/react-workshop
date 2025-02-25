@@ -20,7 +20,7 @@ export default function Pokemon({data}){
     return (
         <>
             <div className = {`pokemon ${type}`}>
-                <h2 className="listName">{data.name}</h2>
+                <h2 className="listName">{data.name.charAt(0).toUpperCase(data.name)+ data.name.slice(1)}</h2>
                 <Link to='/Details'>
                 <img className="picmon" key={data.name} alt={data.name} src={pokeSprite}
                     onClick={() => setDetails(data)}/>

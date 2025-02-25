@@ -1,3 +1,4 @@
+/* Root Container */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   text-align: center;
 }
 
+/* Logo Styles */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -18,6 +20,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Keyframes for Logo Spin */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +30,107 @@
   }
 }
 
+/* Media Queries */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card Component */
 .card {
   padding: 2em;
+  margin: 1em;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Read the Docs Link */
 .read-the-docs {
   color: #888;
+  text-decoration: none;
+}
+.read-the-docs:hover {
+  color: #000;
+}
+
+/* Title Styles */
+.title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Pokemon List Styles */
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+
+.pokemon {
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  transition: transform 200ms, background-color 200ms;
+}
+.pokemon:hover {
+  transform: scale(1.05);
+  background-color: #e0e0e0;
+}
+
+/* Pokemon Type Colors */
+.pokemon.grass {
+  background-color: #78c850;
+}
+.pokemon.fire {
+  background-color: #f08030;
+}
+.pokemon.water {
+  background-color: #6890f0;
+}
+/* Add more types as needed */
+
+/* Pokemon Image */
+.picmon {
+  width: 100px;
+  height: 100px;
+  transition: transform 200ms;
+}
+.picmon:hover {
+  transform: scale(1.1);
+}
+
+/* Pokemon Name */
+.listName {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+/* Details Component */
+.name {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 1rem 0;
+}
+.height, .weight, .HP, .Attack, .Defense, .SpecialAttack, .SpecialDefense, .Speed {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+/* Move Display */
+.MoveDisplay {
+  margin-top: 1rem;
+}
+.MoveDisplay div {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.3rem 0;
 }

@@ -5,7 +5,6 @@ import DetailsContext from "./DetailsContext";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
-
 function App() {
   const [home, setHome] = useState('https://pokeapi.co/api/v2/pokemon?limit=151')
   const [pokeList, setPokeList] = useState([])
@@ -23,11 +22,10 @@ function App() {
 
   return (
   <DetailsContext.Provider value = {value}>
-      <div className = "title">Gen1 PokeList</div>
-      {/* <div className = "pokeDisplay"></div> */}
-   <Routes>
-    <Route path='/Details' element={<Details />} />
-    <Route path='/' element= {pokeList.map(pokemon => <Pokemon key={pokemon.name} data={pokemon}/>)}/>
+      <h1 className = "title">Gen1 PokeList</h1>
+    <Routes>
+      <Route path='/Details' element={<Details />} />
+      <Route path='/' element= {pokeList.map(pokemon => <Pokemon key={pokemon.name} data={pokemon}/>)}/>
     </Routes>
   </DetailsContext.Provider>
   )

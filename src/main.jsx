@@ -5,7 +5,7 @@ import './index.css';
 import App from './App.jsx';
 import Details from './Details.jsx';
 import DetailsContext from './DetailsContext'
-
+import './App.css'
 
 function Main() {
   const [details, setDetails] = useState({});
@@ -15,17 +15,6 @@ function Main() {
       <App/>
     </Router>
   )
-
-// return (
-//   <DetailsContext.Provider value={{ details, setDetails }}>
-//   <Router>
-//     <Routes>
-//       <Route path='/Details' element={<Details />} />
-//       <Route path='/' element={<App />} />
-//     </Routes>
-//   </Router>
-//   </DetailsContext.Provider>
-//   )
 }
 
 
