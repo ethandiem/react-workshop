@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Pokemon from "./Pokemon";
 import Details from "./Details";
 import DetailsContext from "./DetailsContext";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
@@ -20,15 +22,25 @@ function App() {
   }, [home])
 
   return (
-    <>
-    <DetailsContext.Provider value={value}>
+  <DetailsContext.Provider value = {value}>
       <div className = "title">Gen1 PokeList</div>
-      <div className = "pokeDisplay">{pokeList.map(pokemon => <Pokemon key={pokemon.name} data={pokemon}/>)}</div>
-    </DetailsContext.Provider>
-    </>
+      {/* <div className = "pokeDisplay"></div> */}
+   <Routes>
+    <Route path='/Details' element={<Details />} />
+    <Route path='/' element= {pokeList.map(pokemon => <Pokemon key={pokemon.name} data={pokemon}/>)}/>
+    </Routes>
+  </DetailsContext.Provider>
   )
 }
 
 // {pokeList.map(pokemon => <Pokemon key={pokemon.name} pokePic={callPic(pokemon.url)}/>)}
 
 export default App
+
+
+// return (
+//   <DetailsContext.Provider value={{ details, setDetails }}>
+//   <Router>
+//   </Router>
+//   </DetailsContext.Provider>
+//   )
