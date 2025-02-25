@@ -41,7 +41,7 @@
 .card {
   padding: 2em;
   margin: 1em;
-  border: 1px solid #000000;
+  border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -94,7 +94,48 @@
 .pokemon.water {
   background-color: #6890f0;
 }
-/* Add more types as needed */
+.pokemon.electric {
+  background-color: #f8d030;
+}
+.pokemon.ice {
+  background-color: #98d8d8;
+}
+.pokemon.fighting {
+  background-color: #c03028;
+}
+.pokemon.poison {
+  background-color: #a040a0;
+}
+.pokemon.ground {
+  background-color: #e0c068;
+}
+.pokemon.flying {
+  background-color: #a890f0;
+}
+.pokemon.psychic {
+  background-color: #f85888;
+}
+.pokemon.bug {
+  background-color: #a8b820;
+}
+.pokemon.rock {
+  background-color: #b8a038;
+}
+.pokemon.ghost {
+  background-color: #705898;
+}
+.pokemon.dragon {
+  background-color: #7038f8;
+}
+.pokemon.dark {
+  background-color: #705848;
+}
+.pokemon.steel {
+  background-color: #b8b8d0;
+}
+.pokemon.fairy {
+  background-color: #ee99ac;
+}
 
 /* Pokemon Image */
 .picmon {
@@ -106,6 +147,12 @@
   transform: scale(1.1);
 }
 
+/* Loading GIF */
+.loading-gif {
+  width: 50px;
+  height: 50px;
+}
+
 /* Pokemon Name */
 .listName {
   font-size: 1.5rem;
@@ -114,14 +161,43 @@
 }
 
 /* Details Component */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+/* Container for Picmon and Button */
+.picmon-back-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.details-container img.picmon {
+  width: 150px;
+  height: 150px;
+}
+
 .name {
-  font-size: 1.8rem;
-  color: #333;
+  font-size: 2rem;
+  color: #ffffff;
   margin: 1rem 0;
 }
+
 .height, .weight, .HP, .Attack, .Defense, .SpecialAttack, .SpecialDefense, .Speed {
   font-size: 1.2rem;
-  color: #555;
+  color: #acacac;
   margin: 0.5rem 0;
 }
 
@@ -131,6 +207,57 @@
 }
 .MoveDisplay div {
   font-size: 1rem;
-  color: #666;
+  color: #a5a5a5;
   margin: 0.3rem 0;
+}
+
+/* Loading Component */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Back Button */
+.back-button {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 200ms;
+  text-align: center;
+  display: block; /* Ensures it takes the full width and centers */
+  width: fit-content;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+
+/* General Button Styles */
+button {
+  display: block; /* Ensure full width for centering */
+  margin: 0 auto; /* Center horizontally */
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 200ms;
+  text-align: center;
+  width: fit-content; /* Keeps it from stretching */
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
 }

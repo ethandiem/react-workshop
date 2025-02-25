@@ -40,7 +40,7 @@ export default function Details() {
     return (
     <>
         <Link to='/'>
-            <button>Back</button>/
+            <button>Back</button>
         </Link>
         <img className="picmon" key={details.name} alt={details.name} src={pokeSprite}/>
         <div className="name">Name: {details.name.charAt(0).toUpperCase(details.name)+ details.name.slice(1)}</div>
